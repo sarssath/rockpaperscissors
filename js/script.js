@@ -6,10 +6,11 @@
 /* global $ */
 var computerChoice;
 var winner;
-var randomNumber = Math.random();
+
 
 $("#shoot").click(function(){
-    var userChoice  = $("#userChoice").val(); 
+    var userChoice  = $("#input").val(); 
+    var randomNumber = Math.random();
     $("#userChoice").text(userChoice);
     if (randomNumber > 0 && randomNumber <.33) {
         computerChoice = "rock";
@@ -23,7 +24,27 @@ $("#shoot").click(function(){
         computerChoice = "scissors";
     $("#computerChoice").text(computerChoice);
     }
-    $("#computerChoice").text(computerChoice);
+    if (userChoice === "rock" && computerChoice === "scissors") {
+    $("#result").text("user wins");
+    } else if (userChoice === "paper" && computerChoice === "scissors") {
+    $("#result").text("computer wins");
+    } else if (userChoice === "scissors" && computerChoice === "scissors") {
+    $("#result").text("tie");
+    } else if (userChoice === "paper" && computerChoice === "paper") {
+    $("#result").text("tie");
+    } else if (userChoice === "rock" && computerChoice === "rock") {
+    $("#result").text("tie");
+    } else if (userChoice === "rock" && computerChoice === "paper") {
+    $("#result").text("computer wins");
+    } else if (userChoice === "paper" && computerChoice === "rock") {
+    $("#result").text("computer wins");
+    } else if (userChoice === "scissors" && computerChoice === "paper") {
+    $("#result").text("user wins");
+    } else if (userChoice === "scissors" && computerChoice === "rock") {
+    $("#result").text("computer wins");
+    }
+  
+  
 });
 
 // DOCUMENT READY FUNCTION BELOW
