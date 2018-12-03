@@ -37,7 +37,7 @@ $("#shoot").click(function(){
     } else if (userChoice === "rock" && computerChoice === "paper") {
     $("#result").text("computer wins");
     } else if (userChoice === "paper" && computerChoice === "rock") {
-    $("#result").text("computer wins");
+    $("#result").text("user wins");
     } else if (userChoice === "scissors" && computerChoice === "paper") {
     $("#result").text("user wins");
     } else if (userChoice === "scissors" && computerChoice === "rock") {
